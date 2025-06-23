@@ -11,7 +11,7 @@ export default function handler(req, res) {
   console.log("Referer:", referer);
   console.log("User-Agent:", userAgent);
 
-  if (isFromPatreonWeb || (isFromPatreonApp && !isFromKemWeb) {
+  if (isFromPatreonWeb || (isFromPatreonApp && !isFromKemWeb)) {
     res.writeHead(302, { Location: megaLink });
     res.end();
   } else {

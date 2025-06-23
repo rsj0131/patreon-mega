@@ -14,7 +14,7 @@ export default function handler(req, res) {
     res.writeHead(302, { Location: megaLink });
     res.end();
   } else {
-    res.writeHead(302, { Location: megaLink });
+    res.writeHead(302, { Location: homeLink });
     res.end();
   }
 }

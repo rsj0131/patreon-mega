@@ -5,12 +5,13 @@ export default function handler(req, res) {
   const homeLink = process.env.HOME_LINK;
 
   const isFromPatreonWeb = referer.includes("patreon.com");
+  const isFromKemWeb = referer.includes("kemono");
   const isFromPatreonApp = userAgent.includes("iPhone") || userAgent.includes("Android");
 
   console.log("Referer:", referer);
   console.log("User-Agent:", userAgent);
 
-  if (isFromPatreonWeb || isFromPatreonApp) {
+  if (isFromPatreonWeb || (isFromPatreonApp && !isFromKemWeb) {
     res.writeHead(302, { Location: megaLink });
     res.end();
   } else {

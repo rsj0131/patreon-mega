@@ -4,7 +4,7 @@ export default function handler(req, res) {
   const megaLink = process.env.VIDEO_LINK;
 
   const isFromPatreonWeb = referer.includes("patreon.com");
-  const isFromPatreonApp = userAgent.includes("Patreon") || userAgent.includes("Android");
+  const isFromPatreonApp = userAgent.includes("Patreon");
 
   if (isFromPatreonWeb || isFromPatreonApp) {
     res.writeHead(302, { Location: megaLink });

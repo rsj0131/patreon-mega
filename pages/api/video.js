@@ -5,7 +5,7 @@ export default function handler(req, res) {
   const homeLink = process.env.HOME_LINK;
 
   const isFromPatreonWeb = referer.includes("patreon.com");
-  const isFromPatreonApp = userAgent.includes("Patreon");
+  const isFromPatreonApp = userAgent.includes("iPhone") || userAgent.includes("Android");
 
   console.log("Referer:", referer);
   console.log("User-Agent:", userAgent);

@@ -6,6 +6,9 @@ export default function handler(req, res) {
   const isFromPatreonWeb = referer.includes("patreon.com");
   const isFromPatreonApp = userAgent.includes("Patreon");
 
+  console.log("Referer:", referer);
+  console.log("User-Agent:", userAgent);
+
   if (isFromPatreonWeb || isFromPatreonApp) {
     res.writeHead(302, { Location: megaLink });
     res.end();
